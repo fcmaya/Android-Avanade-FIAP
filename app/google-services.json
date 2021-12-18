@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "372188875571",
+    "project_id": "avanade-fiap-maia",
+    "storage_bucket": "avanade-fiap-maia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372188875571:android:04df0e8a4b13254bc94c46",
+        "android_client_info": {
+          "package_name": "br.com.equipequatro.traveltips"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372188875571-juhk923npgh9fo83s4bvu0pdode8tsif.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.equipequatro.traveltips",
+            "certificate_hash": "c32694cf74f57bda981583ab979f44f99c3ffce2"
+          }
+        },
+        {
+          "client_id": "372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmSAQhui9Pemookr2U-lqd4FspQKXASr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372188875571:android:90c8d86830895eb5c94c46",
+        "android_client_info": {
+          "package_name": "br.com.fiap.imc20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmSAQhui9Pemookr2U-lqd4FspQKXASr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372188875571:android:e1b63e6add94f122c94c46",
+        "android_client_info": {
+          "package_name": "com.avanade.firebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmSAQhui9Pemookr2U-lqd4FspQKXASr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
