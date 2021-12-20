@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@null" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_feeds"
+        android:title="@null" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_favorite"
+        android:title="@null" />
+
+    <item
+        android:id="@+id/navigation_new_tip"
+        android:icon="@drawable/ic_add"
+        android:title="@null" />
+        />
+
+</menu>
