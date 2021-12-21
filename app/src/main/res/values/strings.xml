@@ -10,6 +10,15 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="forgot_passord">FORGOT PASSWORD</string>
+    <string name="forgot_passord">ESQUECEU A SENHA</string>
     <string name="set_your_email">Um e-mail será enviado para você refedinir sua senha.</string>
+    <string name="recuperar_sua_senha">Recuperar sua senha</string>
+    <string name="hint_seu_e_mail">Seu e-mail</string>
+    <string name="hint_login">Login</string>
+    <string name="hint_senha">Senha</string>
+    <string name="login">Login</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="msg_campos_obrigatorios">Favor preencher os campos obrigatórios</string>
+    <string name="error_email_obrigatorio">E-mail é obrigatório!</string>
 </resources>

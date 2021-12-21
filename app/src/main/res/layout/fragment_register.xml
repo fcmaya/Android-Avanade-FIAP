@@ -14,7 +14,7 @@
     tools:context=".RegisterFragment">
 
     <EditText
-        android:id="@+id/edit_nome"
+        android:id="@+id/edtNome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -29,65 +29,59 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_email"
+        android:id="@+id/edtEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
         android:background="@drawable/style_edit_text"
         android:hint="Digite seu e-mail"
         android:inputType="textEmailAddress"
         android:textColor="@color/black"
         android:textColorHint="#666"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_nome" />
+        app:layout_constraintEnd_toEndOf="@+id/edtNome"
+        app:layout_constraintStart_toStartOf="@+id/edtNome"
+        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
 
     <EditText
-        android:id="@+id/edit_password"
+        android:id="@+id/edtPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
         android:background="@drawable/style_edit_text"
         android:hint="Digite sua Senha"
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="#666"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_email"
+        app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+        app:layout_constraintStart_toStartOf="@+id/edtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/edit_confirm_password"
+        android:id="@+id/edtConfirmPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
         android:background="@drawable/style_edit_text"
         android:hint="Digite a confirmação de sua Senha"
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="#666"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_password"
+        app:layout_constraintEnd_toEndOf="@+id/edtPassword"
+        app:layout_constraintStart_toStartOf="@+id/edtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/btn_recuperar"
+        android:id="@+id/btnRegistrar"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/button_login"
-        android:text="REGISTER"
-        app:layout_constraintEnd_toEndOf="@+id/edit_confirm_password"
-        app:layout_constraintStart_toStartOf="@+id/edit_confirm_password"
-        app:layout_constraintTop_toBottomOf="@+id/edit_confirm_password" />
+        android:text="REGISTRAR"
+        app:layout_constraintEnd_toEndOf="@+id/edtConfirmPassword"
+        app:layout_constraintStart_toStartOf="@+id/edtConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edtConfirmPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
