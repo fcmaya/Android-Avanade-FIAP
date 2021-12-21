@@ -1,15 +1,11 @@
 package br.com.equipequatro.traveltips
 
-import android.app.Activity
 import android.app.AlertDialog
-import android.app.PendingIntent.getActivity
-import android.content.Intent
 import android.os.Handler
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.FragmentActivity
 
 class ForgotPasswordDialog(val atvd: FragmentActivity?) {
@@ -25,15 +21,15 @@ class ForgotPasswordDialog(val atvd: FragmentActivity?) {
         builder.setCancelable(false)
         dialog = builder.create()
 
-        editLogin = dialogView!!.findViewById<EditText>(R.id.edit_forgot_password_email)
+        editLogin = dialogView!!.findViewById<EditText>(R.id.edtEsqueciSenhaEmail)
 
-        val btnFechar = dialogView?.findViewById<ImageButton>(R.id.btn_equeci_senha_fechar)
+        val btnFechar = dialogView?.findViewById<ImageButton>(R.id.btnEqueciSenhaFechar)
         btnFechar?.setOnClickListener {
             dialog.dismiss()
         }
 
-        val btnRecuperar = dialogView?.findViewById<Button>(R.id.btn_recuperar)
-        btnRecuperar?.setOnClickListener {
+        val btnRecuperarSenha = dialogView?.findViewById<Button>(R.id.btnRecuperarSenha)
+        btnRecuperarSenha?.setOnClickListener {
             recuperar()
         }
 
