@@ -10,4 +10,6 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="forgot_passord">FORGOT PASSWORD</string>
+    <string name="set_your_email">Um e-mail será enviado para você refedinir sua senha.</string>
 </resources>
