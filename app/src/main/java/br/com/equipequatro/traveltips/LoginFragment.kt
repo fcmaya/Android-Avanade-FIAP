@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 
@@ -22,6 +23,7 @@ class LoginFragment : Fragment() {
     private lateinit var btnGoogle: Button
     private lateinit var btnFacebook: Button
 
+    private lateinit var lnkForgotPassword: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,10 +38,12 @@ class LoginFragment : Fragment() {
 
         editLogin = view.findViewById<EditText>(R.id.edit_email)
         editPassword = view.findViewById<EditText>(R.id.edit_password)
-        btnLogin = view.findViewById<Button>(R.id.btn_login)
+        btnLogin = view.findViewById<Button>(R.id.btn_recuperar)
 
         btnGoogle = view.findViewById<Button>(R.id.vt_btn_google)
         btnFacebook = view.findViewById<Button>(R.id.vt_btn_fb)
+
+        lnkForgotPassword = view.findViewById<TextView>(R.id.link_forgot_password)
 
         btnLogin.setOnClickListener {
             Log.d("botao", "Login")
@@ -64,6 +68,14 @@ class LoginFragment : Fragment() {
                     .makeText(it.context, "Ops! Campos obrigatórios", Toast.LENGTH_LONG)
                     .show()
             }
+        }
+
+        lnkForgotPassword.setOnClickListener {
+            Log.d("botao", "esqueci a senha")
+
+            val forgotPasswordDialog = ForgotPasswordDialog(this.activity)
+
+            forgotPasswordDialog.openDialog()
         }
 
         // Inflate the layout for this fragment
