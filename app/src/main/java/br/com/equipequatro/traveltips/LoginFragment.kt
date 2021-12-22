@@ -43,7 +43,7 @@ class LoginFragment : Fragment() {
 
                     val intent = Intent(it.context, MainActivity::class.java)
                     startActivity(intent)
-                }, 5000)
+                }, 1000)
 
             } else {
                 Toast
