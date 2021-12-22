@@ -1,6 +1,7 @@
 package br.com.equipequatro.traveltips
 
 import android.os.Bundle
+import android.widget.ScrollView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -8,6 +9,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import br.com.equipequatro.traveltips.databinding.ActivityMainBinding
+import br.com.equipequatro.traveltips.ui.favorites.FavoritesFragment
+import br.com.equipequatro.traveltips.ui.feeds.FeedsFragment
+import br.com.equipequatro.traveltips.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,16 +24,34 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
+//        val scrollViewFragment: ScrollView = binding.scrollViewFragment
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main2)
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
+        navView.setOnItemSelectedListener {
+            val supportFragmentTransaction = supportFragmentManager.beginTransaction()
+            val fragment = when (it.itemId){
+                R.id.navigation_home -> {
+                    HomeFragment()
+                }
+                R.id.navigation_feeds -> {
+                    FeedsFragment()
+                }
+                R.id.navigation_favorites -> {
+                    FavoritesFragment()
+                }
+                else -> {
+                    ProfileFragment()
+                }
+            }
 
-        //setupActionBarWithNavController(navController, appBarConfiguration)
+            supportFragmentTransaction.replace(R.id.frameLayoutFragment, fragment)
+            supportFragmentTransaction.commit()
 
-        navView.setupWithNavController(navController)
+            true
+        }
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frameLayoutFragment, HomeFragment())
+            .commit()
     }
 }

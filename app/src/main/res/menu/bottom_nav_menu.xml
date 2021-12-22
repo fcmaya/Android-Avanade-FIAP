@@ -7,18 +7,18 @@
         android:title="@null" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_feeds"
         android:icon="@drawable/ic_feeds"
         android:title="@null" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_favorites"
         android:icon="@drawable/ic_favorite"
         android:title="@null" />
 
     <item
-        android:id="@+id/navigation_new_tip"
-        android:icon="@drawable/ic_add"
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_profile"
         android:title="@null" />
         />
 
