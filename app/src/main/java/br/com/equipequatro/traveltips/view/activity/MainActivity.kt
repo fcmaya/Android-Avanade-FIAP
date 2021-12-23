@@ -1,17 +1,14 @@
-package br.com.equipequatro.traveltips
+package br.com.equipequatro.traveltips.view.activity
 
 import android.os.Bundle
-import android.widget.ScrollView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import br.com.equipequatro.traveltips.R
 import br.com.equipequatro.traveltips.databinding.ActivityMainBinding
-import br.com.equipequatro.traveltips.ui.favorites.FavoritesFragment
-import br.com.equipequatro.traveltips.ui.feeds.FeedsFragment
-import br.com.equipequatro.traveltips.ui.home.HomeFragment
+import br.com.equipequatro.traveltips.view.fragment.FavoritesFragment
+import br.com.equipequatro.traveltips.view.fragment.FeedsFragment
+import br.com.equipequatro.traveltips.view.fragment.HomeFragment
+import br.com.equipequatro.traveltips.view.fragment.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
 

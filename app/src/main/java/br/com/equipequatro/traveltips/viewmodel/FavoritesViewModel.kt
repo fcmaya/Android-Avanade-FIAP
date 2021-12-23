@@ -1,4 +1,4 @@
-package br.com.equipequatro.traveltips.ui.favorites
+package br.com.equipequatro.traveltips.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
