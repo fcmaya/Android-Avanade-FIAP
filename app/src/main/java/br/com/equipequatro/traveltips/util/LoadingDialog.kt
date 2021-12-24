@@ -1,10 +1,9 @@
-package br.com.equipequatro.traveltips
+package br.com.equipequatro.traveltips.util
 
 
-import android.app.Activity
 import android.app.AlertDialog
-import android.app.PendingIntent.getActivity
 import androidx.fragment.app.FragmentActivity
+import br.com.equipequatro.traveltips.R
 
 class LoadingDialog(val atvd: FragmentActivity?) {
 

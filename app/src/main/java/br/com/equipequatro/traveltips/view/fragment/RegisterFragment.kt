@@ -1,4 +1,4 @@
-package br.com.equipequatro.traveltips
+package br.com.equipequatro.traveltips.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
