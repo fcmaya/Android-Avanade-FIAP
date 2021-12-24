@@ -28,5 +28,9 @@
     <string name="error_senha_obrigatoria">Senha é obrigatório!</string>
     <string name="default_android_client_id">372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com</string>
     <string name="credenciais_invalidas">Usuário e/ou senha inválida</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_sobre">Sobre</string>
+    <string name="menu_exit">Sair</string>
+    <string name="menu_setting">Configuracao</string>
 
 </resources>

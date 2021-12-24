@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelTips">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".view.activity.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.AboutActivity"
             android:exported="false" />
         <activity
             android:name=".view.activity.SplashActivity"
@@ -26,10 +29,11 @@
         </activity>
         <activity
             android:name=".view.activity.MainActivity"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".view.activity.LoginActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
