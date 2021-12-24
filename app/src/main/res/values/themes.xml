@@ -30,4 +30,8 @@
         <item name="fullscreenBackgroundColor">@color/white</item>
         <item name="fullscreenTextColor">@color/black</item>
     </style>
+
+    <style name="Theme.TravelTips.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.TravelTips.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
