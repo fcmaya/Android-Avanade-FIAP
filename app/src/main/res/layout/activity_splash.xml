@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".SplashActivity"
+    tools:context=".view.activity.SplashActivity"
     android:theme="@android:style/Theme.Dialog">
 
 <!--    android:theme="@style/ThemeOverlay.TravelTips.FullscreenContainer"-->

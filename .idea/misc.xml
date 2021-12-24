@@ -43,10 +43,13 @@
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/drawable/button_login.xml" value="0.20052083333333334" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/drawable/button_nav_bar_selected.xml" value="0.1" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/drawable/edit_login.xml" value="0.20052083333333334" />
+        <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/drawable/indicator_login_selector.xml" value="0.20052083333333334" />
+        <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/drawable/shape_login.xml" value="0.1" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/activity_about.xml" value="0.184375" />
-        <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/activity_login.xml" value="0.184375" />
-        <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/activity_main.xml" value="0.3111111111111111" />
+        <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/activity_login.xml" value="0.1866977829638273" />
+        <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/activity_profile.xml" value="0.184375" />
+        <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/activity_setting.xml" value="0.184375" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/dialog_forgot_password.xml" value="0.16666666666666666" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/fragment_feeds.xml" value="0.1" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/fragment_home.xml" value="0.22988505747126436" />
@@ -55,7 +58,7 @@
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/fragment_profile.xml" value="0.5079365079365079" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/header_menu_layout.xml" value="0.38620689655172413" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/menu/bottom_nav_menu.xml" value="0.184375" />
-        <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/menu/menu_drawer.xml" value="0.184375" />
+        <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/menu/menu_drawer.xml" value="0.1" />
         <entry key="..\:/Users/l.ott.da.costa/AndroidStudioProjects/TravelTips/app/src/main/res/drawable/btn_social_media_login.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/l.ott.da.costa/AndroidStudioProjects/TravelTips/app/src/main/res/drawable/button_login.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/l.ott.da.costa/AndroidStudioProjects/TravelTips/app/src/main/res/drawable/edit_login.xml" value="0.1" />

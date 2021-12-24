@@ -1,4 +1,4 @@
-package br.com.equipequatro.traveltips
+package br.com.equipequatro.traveltips.util
 
 import android.app.AlertDialog
 import android.os.Handler
@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
+import br.com.equipequatro.traveltips.R
 
 class ForgotPasswordDialog(val atvd: FragmentActivity?) {
 

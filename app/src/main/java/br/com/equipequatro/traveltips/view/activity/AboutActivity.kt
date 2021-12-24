@@ -1,7 +1,8 @@
-package br.com.equipequatro.traveltips
+package br.com.equipequatro.traveltips.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.equipequatro.traveltips.R
 
 class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
