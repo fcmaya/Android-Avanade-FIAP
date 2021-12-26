@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".view.fragment.HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,16 +23,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/ic_menu"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
@@ -41,19 +31,19 @@
                 android:layout_marginTop="24dp"
                 android:text="Good Morning"
                 android:textColor="@color/purple_200"
-                android:textSize="50sp"
+                android:textSize="32sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="72dp"
+                android:layout_marginTop="40dp"
                 android:text="Leonardo,"
                 android:textColor="#666"
-                android:textSize="40sp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/textView" />
 
