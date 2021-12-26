@@ -24,9 +24,14 @@
     <string name="tab_login">Login</string>
     <string name="tab_registrar">Registrar</string>
     <string name="usuario_nao_cadastrado">Usuário não cadastrado!</string>
-    <string name="error_generico">Ocorreu um erro!</string>
+    <string name="error_generico">Ocorreu um erro! Tente novamente</string>
     <string name="error_senha_obrigatoria">Senha é obrigatório!</string>
     <string name="default_android_client_id">372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com</string>
     <string name="credenciais_invalidas">Usuário e/ou senha inválida</string>
+    <string name="facebook_app_id">452714633105636</string>
+    <string name="fb_login_protocol_scheme">fb452714633105636</string>
+    <string name="autenticacao_falhou">Autenticação falhou.</string>
+    <string name="error_usuario_nao_cadastrado">Usuário não cadastrado na base de dados.</string>
+    <string name="recuperacao_senha">Recuperação de senha iniciada. E-mail enviado.</string>
 
 </resources>

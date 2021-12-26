@@ -8,26 +8,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import android.widget.Toast.makeText
 import androidx.fragment.app.Fragment
-import br.com.equipequatro.traveltips.view.activity.MainActivity
 import br.com.equipequatro.traveltips.R
 import br.com.equipequatro.traveltips.databinding.FragmentLoginBinding
 import br.com.equipequatro.traveltips.util.ForgotPasswordDialog
 import br.com.equipequatro.traveltips.util.LoadingDialog
+import br.com.equipequatro.traveltips.view.activity.MainActivity
+import com.facebook.*
+import com.facebook.FacebookSdk.getApplicationContext
+import com.facebook.appevents.AppEventsLogger
+import com.facebook.login.LoginResult
+import com.facebook.login.widget.LoginButton
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnFailureListener
-import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.*
 import com.google.firebase.internal.api.FirebaseNoSignedInUserException
-import java.lang.Exception
 
 
 class LoginFragment : Fragment() {
@@ -39,8 +39,19 @@ class LoginFragment : Fragment() {
     private lateinit var googleSignInClient: GoogleSignInClient
     // [END Configuração Google]
 
+    // [START Configuração Facebook]
+    private lateinit var callbackManager: CallbackManager
+    //private lateinit var buttonFacebookLogin: LoginButton
+    //private lateinit var btnFacebook: LoginButton
+    // [END Configuração Facebook]
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // [START Configuração Facebook]
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this.activity);
+        // [END Configuração Facebook]
+
     }
 
     override fun onCreateView(
@@ -51,11 +62,6 @@ class LoginFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
 
-//        val usuarioAutenticado = FirebaseAuth.getInstance().currentUser
-//        if (usuarioAutenticado != null) {
-//            login()
-//        }
-
         binding.btnLogin.setOnClickListener {
             if (validar()) {
                 autenticar()
@@ -63,6 +69,8 @@ class LoginFragment : Fragment() {
         }
 
         // [START Configuração Google]
+        binding.btnGoogle2.setSize(SignInButton.SIZE_WIDE);
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_android_client_id))
             .requestEmail()
@@ -70,10 +78,31 @@ class LoginFragment : Fragment() {
         googleSignInClient = GoogleSignIn.getClient(this.activity, gso)
         auth = FirebaseAuth.getInstance()
 
-        binding.btnGoogle.setOnClickListener {
+        binding.btnGoogle2.setOnClickListener {
             signIn()
         }
         // [END Configuração Google]
+
+        // [START Configuração Facebook]
+        callbackManager = CallbackManager.Factory.create()
+
+        binding.btnFacebook2.setReadPermissions("email", "public_profile")
+        binding.btnFacebook2.registerCallback(callbackManager, object :
+            FacebookCallback<LoginResult> {
+            override fun onSuccess(loginResult: LoginResult) {
+                Log.i(TAG2, "facebook:onSuccess:$loginResult")
+                handleFacebookAccessToken(loginResult.accessToken)
+            }
+
+            override fun onCancel() {
+                Log.i(TAG2, "facebook:onCancel")
+            }
+
+            override fun onError(error: FacebookException) {
+                Log.i(TAG2, "facebook:onError", error)
+            }
+        })
+        // [END Configuração Facebook]
 
         binding.lnkEsqueceuSenha.setOnClickListener {
             val forgotPasswordDialog = ForgotPasswordDialog(this.activity)
@@ -109,7 +138,8 @@ class LoginFragment : Fragment() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(OnCompleteListener {
                 if (it.isSuccessful){
-                    login()
+                    val user = auth.currentUser
+                    updateUI(user)
                 }
             })
             .addOnFailureListener(OnFailureListener {
@@ -118,10 +148,14 @@ class LoginFragment : Fragment() {
                         -> Toast.makeText(context, getString(R.string.usuario_nao_cadastrado), Toast.LENGTH_SHORT).show()
                     is FirebaseAuthInvalidCredentialsException
                         -> Toast.makeText(context, getString(R.string.credenciais_invalidas), Toast.LENGTH_SHORT).show()
+                    is FirebaseAuthInvalidUserException
+                        -> Toast.makeText(context, getString(R.string.error_usuario_nao_cadastrado), Toast.LENGTH_SHORT).show()
                     else
                         -> Toast.makeText(context, getString(R.string.error_generico), Toast.LENGTH_SHORT).show()
+
                 }
             })
+
 
         return bit_return
     }
@@ -148,6 +182,9 @@ class LoginFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
+
+        Log.i(TAG, currentUser.toString())
+        Log.i(TAG2, currentUser.toString())
         updateUI(currentUser)
     }
 
@@ -159,10 +196,12 @@ class LoginFragment : Fragment() {
             try {
                 val account = task.getResult(ApiException::class.java)!!
                 firebaseAuthWithGoogle(account.idToken!!)
-                login()
             } catch (e: ApiException) {
                 Toast.makeText(context, getString(R.string.error_generico), Toast.LENGTH_SHORT).show()
             }
+        }else{
+            // Pass the activity result back to the Facebook SDK
+            callbackManager.onActivityResult(requestCode, resultCode, data)
         }
     }
 
@@ -175,6 +214,8 @@ class LoginFragment : Fragment() {
                         val user = auth.currentUser
                         updateUI(user)
                     } else {
+                        Toast.makeText(context, getString(R.string.autenticacao_falhou),
+                            Toast.LENGTH_SHORT).show()
                         updateUI(null)
                     }
                 }
@@ -187,12 +228,39 @@ class LoginFragment : Fragment() {
     }
 
     private fun updateUI(user: FirebaseUser?) {
+        Log.i(TAG, user.toString())
+        Log.i(TAG2, user.toString())
+        if (user != null) {
+            login()
+        }
+    }
+    // [END Configuração Google]
 
+    // [START Configuração Facebook]
+    private fun handleFacebookAccessToken(token: AccessToken) {
+        Log.i(TAG2, "handleFacebookAccessToken:$token")
+
+        val credential = FacebookAuthProvider.getCredential(token.token)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener() { task ->
+                if (task.isSuccessful) {
+                    Log.i(TAG2, "signInWithCredential:success")
+                    val user = auth.currentUser
+                    updateUI(user)
+                    //login()
+                } else {
+                    Log.i(TAG2, "signInWithCredential:failure", task.exception)
+                    Toast.makeText(context, getString(R.string.autenticacao_falhou),
+                        Toast.LENGTH_SHORT).show()
+                    updateUI(null)
+                }
+            }
     }
 
     companion object {
         private const val TAG = "GoogleActivity"
         private const val RC_SIGN_IN = 9001
+        private const val TAG2 = "FacebookLogin"
     }
-    // [END Configuração Google]
+    // [END Configuração Facebook]
 }
