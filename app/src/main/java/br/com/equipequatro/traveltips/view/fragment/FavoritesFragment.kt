@@ -1,4 +1,4 @@
-package br.com.equipequatro.traveltips.ui.favorites
+package br.com.equipequatro.traveltips.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.com.equipequatro.traveltips.databinding.FragmentFavoritesBinding
+import br.com.equipequatro.traveltips.viewmodel.FavoritesViewModel
 
 class FavoritesFragment : Fragment() {
 

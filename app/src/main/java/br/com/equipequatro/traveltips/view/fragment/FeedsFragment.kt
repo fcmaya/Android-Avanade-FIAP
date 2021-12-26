@@ -1,4 +1,4 @@
-package br.com.equipequatro.traveltips.ui.feeds
+package br.com.equipequatro.traveltips.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,6 +15,7 @@ import br.com.equipequatro.traveltips.R
 import br.com.equipequatro.traveltips.adapter.FeedPostAdapter
 import br.com.equipequatro.traveltips.databinding.FragmentFeedsBinding
 import br.com.equipequatro.traveltips.repository.FeedPostItemRepository
+import br.com.equipequatro.traveltips.viewmodel.FeedsViewModel
 
 class FeedsFragment : Fragment() {
 

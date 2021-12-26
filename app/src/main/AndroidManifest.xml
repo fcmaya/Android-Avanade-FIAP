@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelTips">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".view.activity.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".view.activity.AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:label="@string/title_activity_splash"
@@ -25,11 +28,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+            android:name=".view.activity.MainActivity"
+            android:exported="false">
+        </activity>
         <activity
-            android:name=".LoginActivity"
-            android:exported="false"></activity>
+            android:name=".view.activity.LoginActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
