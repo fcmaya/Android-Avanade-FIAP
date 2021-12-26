@@ -33,5 +33,10 @@
     <string name="autenticacao_falhou">Autenticação falhou.</string>
     <string name="error_usuario_nao_cadastrado">Usuário não cadastrado na base de dados.</string>
     <string name="recuperacao_senha">Recuperação de senha iniciada. E-mail enviado.</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_sobre">Sobre</string>
+    <string name="menu_exit">Sair</string>
+    <string name="menu_setting">Configuracao</string>
+
 
 </resources>

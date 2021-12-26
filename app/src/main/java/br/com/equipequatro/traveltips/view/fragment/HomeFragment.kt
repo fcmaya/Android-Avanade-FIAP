@@ -37,12 +37,6 @@ class HomeFragment : Fragment() {
 //            textView.text = it
 //        })
 
-        binding.button.setOnClickListener {
-            auth = FirebaseAuth.getInstance()
-            auth.signOut()
-            requireActivity().finish()
-        }
-
         return root
     }
 
