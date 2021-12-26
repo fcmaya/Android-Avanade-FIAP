@@ -69,25 +69,24 @@
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/lnkEsqueceuSenha" />
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/btnGoogle"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_social_media_login"
-        android:drawableLeft="@drawable/ic_iconegoogle"
-        android:text="@string/google"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-    <Button
-        android:id="@+id/btnFacebook"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:background="@drawable/btn_social_media_login"
-        android:drawableLeft="@drawable/ic_iconefb"
-        android:text="@string/facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintTop_toTopOf="@+id/btnGoogle" />
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/btnFacebook"
+        android:text="@string/facebook"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/btnGoogle"
+        app:layout_constraintStart_toStartOf="@+id/btnGoogle"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoogle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

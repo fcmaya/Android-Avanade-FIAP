@@ -8,11 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import br.com.equipequatro.traveltips.databinding.FragmentHomeBinding
 import br.com.equipequatro.traveltips.viewmodel.HomeViewModel
+import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
+
+    private lateinit var auth : FirebaseAuth
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -33,6 +36,7 @@ class HomeFragment : Fragment() {
 //        homeViewModel.text.observe(viewLifecycleOwner, Observer {
 //            textView.text = it
 //        })
+
         return root
     }
 
