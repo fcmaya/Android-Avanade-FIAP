@@ -17,11 +17,13 @@ import br.com.equipequatro.traveltips.view.fragment.FavoritesFragment
 import br.com.equipequatro.traveltips.view.fragment.FeedsFragment
 import br.com.equipequatro.traveltips.view.fragment.HomeFragment
 import br.com.equipequatro.traveltips.view.fragment.ProfileFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,9 +93,10 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this, SettingActivity::class.java)
                     startActivity(intent)
                 }
-                else -> {
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
+                R.id.nav_menu_exit -> {
+                    auth = FirebaseAuth.getInstance()
+                    auth.signOut()
+                    finish()
                 }
             }
 

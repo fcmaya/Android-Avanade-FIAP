@@ -37,6 +37,10 @@
     <string name="menu_sobre">Sobre</string>
     <string name="menu_exit">Sair</string>
     <string name="menu_setting">Configuracao</string>
+    <string name="erro_senha_divergente">A confirmação da senha não confere.</string>
+    <string name="usuario_ja_cadastrado">Usuário já cadastrado!</string>
+    <string name="senha_fraca">Senha fraca. É necessário criar uma senha com no mínimo 6 caracteres.</string>
+    <string name="usuario_cadastrado">Usuário cadastrado com sucesso!</string>
 
 
 </resources>

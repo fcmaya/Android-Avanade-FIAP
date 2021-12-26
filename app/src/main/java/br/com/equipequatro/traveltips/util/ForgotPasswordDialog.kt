@@ -43,11 +43,11 @@ class ForgotPasswordDialog(private val atvd: FragmentActivity?) {
 
     }
 
-    fun validar(): Boolean {
+    fun validar(view: View): Boolean {
         var bit_return: Boolean = true
 
         if (editLogin!!.text!!.isEmpty()) {
-            editLogin!!.error = "E-mail é obrigatório!"
+            editLogin!!.error = view.context.getString(R.string.error_email_obrigatorio)
             bit_return = false
         }
 
@@ -56,7 +56,7 @@ class ForgotPasswordDialog(private val atvd: FragmentActivity?) {
 
     fun recuperar(view: View)
     {
-        if (validar()){
+        if (validar(view)){
             dialog.dismiss()
 
             val loadingDialog = LoadingDialog(atvd)

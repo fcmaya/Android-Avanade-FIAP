@@ -41,8 +41,7 @@ class LoginFragment : Fragment() {
 
     // [START Configuração Facebook]
     private lateinit var callbackManager: CallbackManager
-    //private lateinit var buttonFacebookLogin: LoginButton
-    //private lateinit var btnFacebook: LoginButton
+    private lateinit var btnFacebook: LoginButton
     // [END Configuração Facebook]
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,7 +68,7 @@ class LoginFragment : Fragment() {
         }
 
         // [START Configuração Google]
-        binding.btnGoogle2.setSize(SignInButton.SIZE_WIDE);
+        binding.btnGoogle.setSize(SignInButton.SIZE_WIDE);
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_android_client_id))
@@ -78,7 +77,7 @@ class LoginFragment : Fragment() {
         googleSignInClient = GoogleSignIn.getClient(this.activity, gso)
         auth = FirebaseAuth.getInstance()
 
-        binding.btnGoogle2.setOnClickListener {
+        binding.btnGoogle.setOnClickListener {
             signIn()
         }
         // [END Configuração Google]
@@ -86,8 +85,8 @@ class LoginFragment : Fragment() {
         // [START Configuração Facebook]
         callbackManager = CallbackManager.Factory.create()
 
-        binding.btnFacebook2.setReadPermissions("email", "public_profile")
-        binding.btnFacebook2.registerCallback(callbackManager, object :
+        binding.btnFacebook.setReadPermissions("email", "public_profile")
+        binding.btnFacebook.registerCallback(callbackManager, object :
             FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 Log.i(TAG2, "facebook:onSuccess:$loginResult")
