@@ -66,6 +66,8 @@
         <entry key="..\:/Users/l.ott.da.costa/AndroidStudioProjects/TravelTips/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/l.ott.da.costa/AndroidStudioProjects/TravelTips/app/src/main/res/drawable/shape_login.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/l.ott.da.costa/AndroidStudioProjects/TravelTips/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.12239583333333333" />
+        <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/ic_baseline_save_24.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/ic_equipe4mobile.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/ic_favorite.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/ic_iconefb.xml" value="0.18177083333333333" />
@@ -75,6 +77,7 @@
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/ic_takepic.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/icon_navigation_bar_selector.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/indicator_login_selector.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/input.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/shape_login.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/drawable/style_edit_text.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/layout/activity_about.xml" value="0.22" />
@@ -88,7 +91,7 @@
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/layout/fragment_feeds.xml" value="0.1421875" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/layout/fragment_home.xml" value="0.14" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/layout/fragment_login.xml" value="0.1421875" />
-        <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/layout/fragment_profile.xml" value="0.134375" />
+        <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/layout/fragment_register.xml" value="0.1421875" />
         <entry key="..\:/Users/p.da.silva.gagliardi/Documents/androidAVANADE/Android-Avanade-FIAP/app/src/main/res/layout/header_menu_layout.xml" value="0.1421875" />
       </map>
