@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import br.com.equipequatro.traveltips.R
 import br.com.equipequatro.traveltips.databinding.FragmentLoginBinding
+import br.com.equipequatro.traveltips.repository.SharedPreferencesRepository
 import br.com.equipequatro.traveltips.util.ForgotPasswordDialog
 import br.com.equipequatro.traveltips.util.LoadingDialog
 import br.com.equipequatro.traveltips.view.activity.MainActivity
@@ -136,6 +137,13 @@ class LoginFragment : Fragment() {
             .addOnCompleteListener(OnCompleteListener {
                 if (it.isSuccessful){
                     val user = auth.currentUser
+
+                    if (user?.displayName == null){
+                        SharedPreferencesRepository.savePreferences(context, "displayName", user?.email.toString())
+                    }
+                    SharedPreferencesRepository.savePreferences(context, "email", user?.email.toString())
+                    SharedPreferencesRepository.savePreferences(context, "photoUrl", user?.photoUrl.toString().replace("\\", ""))
+
                     updateUI(user)
                 }
             })
@@ -180,8 +188,6 @@ class LoginFragment : Fragment() {
         super.onStart()
         val currentUser = auth.currentUser
 
-        Log.i(TAG, currentUser.toString())
-        Log.i(TAG2, currentUser.toString())
         updateUI(currentUser)
     }
 
@@ -208,6 +214,11 @@ class LoginFragment : Fragment() {
                 .addOnCompleteListener(it) { task ->
                     if (task.isSuccessful) {
                         val user = auth.currentUser
+
+                        SharedPreferencesRepository.savePreferences(context, "displayName", user?.displayName.toString())
+                        SharedPreferencesRepository.savePreferences(context, "email", user?.email.toString())
+                        SharedPreferencesRepository.savePreferences(context, "photoUrl", user?.photoUrl.toString().replace("\\", ""))
+
                         updateUI(user)
                     } else {
                         Toast.makeText(context, getString(R.string.autenticacao_falhou),
