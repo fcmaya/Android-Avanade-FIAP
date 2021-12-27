@@ -49,7 +49,10 @@
     <string name="usuario_ja_cadastrado">Usuário já cadastrado!</string>
     <string name="senha_fraca">Senha fraca. É necessário criar uma senha com no mínimo 6 caracteres.</string>
     <string name="usuario_cadastrado">Usuário cadastrado com sucesso!</string>
-
+    <string name="saudacao_bom_dia">Bom dia!</string>
+    <string name="saudacao_boa_tarde">Boa tarde!</string>
+    <string name="saudacao_boa_noite">Boa noite!</string>
+    <string name="saudacao_ola">Olá!</string>
 
 
 </resources>

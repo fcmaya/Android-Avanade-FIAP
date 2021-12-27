@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Avanade/CURSO-AVANADE/Mobile Android - FIAP/Android-Avanade-FIAP/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Leonardo/Kotlin/projeto/Android-Avanade-FIAP/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.11388888888888889" />
         <entry key="..\:/Leonardo/Kotlin/projeto/Android-Avanade-FIAP/app/src/main/res/drawable/btn_social_media_login.xml" value="0.11388888888888889" />
         <entry key="..\:/Leonardo/Kotlin/projeto/Android-Avanade-FIAP/app/src/main/res/drawable/button_login.xml" value="0.20052083333333334" />
@@ -59,6 +60,12 @@
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/layout/header_menu_layout.xml" value="0.38620689655172413" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/menu/bottom_nav_menu.xml" value="0.184375" />
         <entry key="..\:/Leonardo/Kotlin/projeto/fork/Android-Avanade-FIAP/app/src/main/res/menu/menu_drawer.xml" value="0.1" />
+
+        <entry key="..\:/Users/j.paraizo.magalhaes/AndroidStudioProjects/Android-Avanade-FIAP/app/src/main/res/drawable/praia.xml" value="0.37135416666666665" />
+        <entry key="..\:/Users/j.paraizo.magalhaes/AndroidStudioProjects/Android-Avanade-FIAP/app/src/main/res/layout/fragment_feeds.xml" value="0.5" />
+        <entry key="..\:/Users/j.paraizo.magalhaes/AndroidStudioProjects/Android-Avanade-FIAP/app/src/main/res/layout/fragment_home.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/j.paraizo.magalhaes/AndroidStudioProjects/Android-Avanade-FIAP/app/src/main/res/layout/item_lista_feed.xml" value="0.4466666666666667" />
+
         <entry key="..\:/Users/l.ott.da.costa/AndroidStudioProjects/TravelTips/app/src/main/res/drawable/btn_social_media_login.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/l.ott.da.costa/AndroidStudioProjects/TravelTips/app/src/main/res/drawable/button_login.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/l.ott.da.costa/AndroidStudioProjects/TravelTips/app/src/main/res/drawable/edit_login.xml" value="0.1" />
@@ -98,7 +105,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

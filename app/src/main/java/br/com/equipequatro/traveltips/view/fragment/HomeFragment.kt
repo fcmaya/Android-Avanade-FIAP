@@ -1,5 +1,6 @@
 package br.com.equipequatro.traveltips.view.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import br.com.equipequatro.traveltips.databinding.FragmentHomeBinding
+import br.com.equipequatro.traveltips.repository.SharedPreferencesRepository
+import br.com.equipequatro.traveltips.util.getGreetingMessage
 import br.com.equipequatro.traveltips.viewmodel.HomeViewModel
 import com.google.firebase.auth.FirebaseAuth
+
 
 class HomeFragment : Fragment() {
 
@@ -32,10 +36,8 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //val textView: TextView = binding.textView
-//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
+        binding.txtNome.text = SharedPreferencesRepository.getPreferences(context, "displayName")
+        binding.txtSaudacao.text = getGreetingMessage(context = this.requireContext())
 
         return root
     }
