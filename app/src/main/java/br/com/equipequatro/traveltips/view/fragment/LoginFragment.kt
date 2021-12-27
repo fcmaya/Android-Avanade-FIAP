@@ -48,7 +48,7 @@ class LoginFragment : Fragment() {
         super.onCreate(savedInstanceState)
         // [START Configuração Facebook]
         FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this.activity);
+        AppEventsLogger.activateApp( this!!.requireActivity()!!.application);
         // [END Configuração Facebook]
 
     }
@@ -86,19 +86,17 @@ class LoginFragment : Fragment() {
         callbackManager = CallbackManager.Factory.create()
 
         binding.btnFacebook.setReadPermissions("email", "public_profile")
+        binding.btnFacebook.setFragment(this);
         binding.btnFacebook.registerCallback(callbackManager, object :
             FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
-                Log.i(TAG2, "facebook:onSuccess:$loginResult")
                 handleFacebookAccessToken(loginResult.accessToken)
             }
 
             override fun onCancel() {
-                Log.i(TAG2, "facebook:onCancel")
             }
 
             override fun onError(error: FacebookException) {
-                Log.i(TAG2, "facebook:onError", error)
             }
         })
         // [END Configuração Facebook]
@@ -199,7 +197,6 @@ class LoginFragment : Fragment() {
                 Toast.makeText(context, getString(R.string.error_generico), Toast.LENGTH_SHORT).show()
             }
         }else{
-            // Pass the activity result back to the Facebook SDK
             callbackManager.onActivityResult(requestCode, resultCode, data)
         }
     }
@@ -227,8 +224,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun updateUI(user: FirebaseUser?) {
-        Log.i(TAG, user.toString())
-        Log.i(TAG2, user.toString())
         if (user != null) {
             login()
         }
@@ -237,18 +232,14 @@ class LoginFragment : Fragment() {
 
     // [START Configuração Facebook]
     private fun handleFacebookAccessToken(token: AccessToken) {
-        Log.i(TAG2, "handleFacebookAccessToken:$token")
 
         val credential = FacebookAuthProvider.getCredential(token.token)
         auth.signInWithCredential(credential)
             .addOnCompleteListener() { task ->
                 if (task.isSuccessful) {
-                    Log.i(TAG2, "signInWithCredential:success")
                     val user = auth.currentUser
                     updateUI(user)
-                    //login()
                 } else {
-                    Log.i(TAG2, "signInWithCredential:failure", task.exception)
                     Toast.makeText(context, getString(R.string.autenticacao_falhou),
                         Toast.LENGTH_SHORT).show()
                     updateUI(null)
