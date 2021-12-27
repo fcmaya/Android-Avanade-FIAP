@@ -32,5 +32,11 @@
     <string name="menu_sobre">Sobre</string>
     <string name="menu_exit">Sair</string>
     <string name="menu_setting">Configuracao</string>
+    <string name="sobre_n_s">Sobre Nós</string>
+    <string name="logo_travel_tips">logo travel tips</string>
+    <string name="somos_um_grupo">Somos um grupo de desenvolvedores, apaixonados por tecnologia e que agora estão se aventurando no mundo Android e amando!</string>
+    <string name="leonardo_ott"> Leonardo Ott \n Full Stack Dev</string>
+    <string name="alexandre"> Alexandre Guimarães \n Back End Dev</string>
+    <string name="fernando"> Fernando Maia \n Back End Dev</string>
 
 </resources>
