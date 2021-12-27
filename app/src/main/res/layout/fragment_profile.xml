@@ -5,27 +5,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="32dp"
     tools:context=".ProfileFragment">
+
+    <TextView
+        android:id="@+id/tv_editar_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perfil"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="60dp"
         app:cardCornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="0dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/foto_pessoa"></ImageView>
-
-
+            android:src="@drawable/user"></ImageView>
     </androidx.cardview.widget.CardView>
 
     <ImageButton
@@ -36,7 +44,103 @@
         android:elevation="2dp"
         android:src="@drawable/ic_takepic"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintStart_toStartOf="@+id/tv_editar_perfil"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"/>
+
+    <EditText
+        android:id="@+id/et_editar_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#1976D2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintStart_toStartOf="@+id/tv_editar_perfil"
+        app:layout_constraintTop_toBottomOf="@+id/et_editar_nome"/>
+
+    <EditText
+        android:id="@+id/et_editar_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#1976D2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_editar_nome"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_editar_nome"
+        app:layout_constraintTop_toBottomOf="@+id/et_editar_nome" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cidade"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintStart_toStartOf="@+id/tv_editar_perfil"
+        app:layout_constraintTop_toBottomOf="@+id/et_editar_email"/>
+
+    <EditText
+        android:id="@+id/et_editar_cidade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#1976D2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_editar_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_editar_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_editar_email" />
+
+    <Button
+        android:id="@+id/btn_editar_atualizar"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="Salvar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/et_editar_cidade"
+        app:layout_constraintStart_toStartOf="@+id/et_editar_cidade"
+        app:layout_constraintTop_toBottomOf="@+id/et_editar_cidade" />
+
+    <Button
+        android:id="@+id/btn_editar_delete"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="Redefinir Senha"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/btn_editar_atualizar"
+        app:layout_constraintStart_toStartOf="@+id/btn_editar_atualizar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_editar_atualizar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

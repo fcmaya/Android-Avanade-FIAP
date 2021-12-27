@@ -4,15 +4,176 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="30dp"
     tools:context=".view.activity.AboutActivity">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sobre"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="-80dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewSobre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/sobre_n_s"
+                android:textAlignment="center"
+                android:textColor="#0091EA"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/imgTravelTips"
+                android:layout_width="133dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="88dp"
+                android:contentDescription="@string/logo_travel_tips"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_iconemain"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/textViewTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="244dp"
+                android:text="@string/somos_um_grupo"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="370dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="116dp"
+                        android:layout_height="83dp"
+                        android:layout_column="1"
+                        app:srcCompat="@drawable/alexandre" />
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="2"
+                        android:text="@string/alexandre"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="116dp"
+                        android:layout_height="83dp"
+                        android:layout_column="1"
+                        app:srcCompat="@drawable/fernando" />
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="2"
+                        android:text="Fernando Maia \nBack End Dev"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="116dp"
+                        android:layout_height="83dp"
+                        android:layout_column="1"
+                        app:srcCompat="@drawable/jefferson" />
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="2"
+                        android:text="Jefferson Magalães \nFront End Dev"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="116dp"
+                        android:layout_height="83dp"
+                        android:layout_column="1"
+                        app:srcCompat="@drawable/leonardo" />
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="2"
+                        android:text="Leonardo Ott \nFull Stack Dev"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="116dp"
+                        android:layout_height="83dp"
+                        android:layout_column="1"
+                        app:srcCompat="@drawable/priscila" />
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="2"
+                        android:text="Priscila Gagliardi \nFront End Dev"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="116dp"
+                        android:layout_height="83dp"
+                        android:layout_column="1"
+                        app:srcCompat="@drawable/renato" />
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="2"
+                        android:text="Renato Mello \nFull Stack Dev"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
