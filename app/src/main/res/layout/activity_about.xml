@@ -71,24 +71,6 @@
                         android:layout_width="116dp"
                         android:layout_height="83dp"
                         android:layout_column="1"
-                        app:srcCompat="@drawable/alexandre" />
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:layout_column="2"
-                        android:text="@string/alexandre"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp">
-                    <ImageView
-                        android:layout_width="116dp"
-                        android:layout_height="83dp"
-                        android:layout_column="1"
                         app:srcCompat="@drawable/fernando" />
                     <TextView
                         android:layout_width="200dp"
@@ -149,24 +131,6 @@
                         android:layout_height="match_parent"
                         android:layout_column="2"
                         android:text="Priscila Gagliardi \nFront End Dev"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp">
-                    <ImageView
-                        android:layout_width="116dp"
-                        android:layout_height="83dp"
-                        android:layout_column="1"
-                        app:srcCompat="@drawable/renato" />
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:layout_column="2"
-                        android:text="Renato Mello \nFull Stack Dev"
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </TableRow>
