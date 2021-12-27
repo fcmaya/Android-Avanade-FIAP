@@ -2,17 +2,22 @@ package br.com.equipequatro.traveltips.util
 
 import android.app.AlertDialog
 import android.os.Handler
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import br.com.equipequatro.traveltips.R
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseAuth
 
-class ForgotPasswordDialog(val atvd: FragmentActivity?) {
+
+class ForgotPasswordDialog(private val atvd: FragmentActivity?) {
 
     lateinit var dialog: AlertDialog
     lateinit var editLogin: EditText
+    lateinit var firebaseAuth: FirebaseAuth
 
     fun openDialog() {
         val inflater = atvd?.layoutInflater
@@ -31,27 +36,27 @@ class ForgotPasswordDialog(val atvd: FragmentActivity?) {
 
         val btnRecuperarSenha = dialogView?.findViewById<Button>(R.id.btnRecuperarSenha)
         btnRecuperarSenha?.setOnClickListener {
-            recuperar()
+            recuperar(it)
         }
 
         val dlgShow = dialog.show()
 
     }
 
-    fun validar(): Boolean {
+    fun validar(view: View): Boolean {
         var bit_return: Boolean = true
 
         if (editLogin!!.text!!.isEmpty()) {
-            editLogin!!.error = "E-mail é obrigatório!"
+            editLogin!!.error = view.context.getString(R.string.error_email_obrigatorio)
             bit_return = false
         }
 
         return bit_return
     }
 
-    fun recuperar()
+    fun recuperar(view: View)
     {
-        if (validar()){
+        if (validar(view)){
             dialog.dismiss()
 
             val loadingDialog = LoadingDialog(atvd)
@@ -63,13 +68,27 @@ class ForgotPasswordDialog(val atvd: FragmentActivity?) {
 
                 loadingDialog.closeDialog()
 
-                //TODO: fazer codigo de recuperação de senha
+                firebaseAuth = FirebaseAuth.getInstance()
+
+                firebaseAuth.sendPasswordResetEmail(editLogin.text.toString())
+                    .addOnCompleteListener (OnCompleteListener {
+                        if(it.isSuccessful){
+                            editLogin.setText("")
+                            Toast
+                                .makeText(dialog.context, view.context.getString(R.string.recuperacao_senha), Toast.LENGTH_LONG)
+                                .show()
+                        }else{
+                            Toast
+                                .makeText(dialog.context, view.context.getString(R.string.error_generico), Toast.LENGTH_LONG)
+                                .show()
+                        }
+                    })
 
             }, 5000)
         }
         else {
             Toast
-                .makeText(dialog.context, "Ops! Campos obrigatórios", Toast.LENGTH_LONG)
+                .makeText(dialog.context, view.context.getString(R.string.msg_campos_obrigatorios), Toast.LENGTH_LONG)
                 .show()
         }
     }
