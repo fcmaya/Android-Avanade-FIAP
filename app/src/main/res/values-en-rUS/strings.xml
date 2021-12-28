@@ -55,6 +55,7 @@
     <string name="saudacao_boa_noite">Good evening!</string>
     <string name="saudacao_ola">Hello!</string>
     <string name="error_nome_obrigatorio">Name is mandatory</string>
+    <string name="usuario_atualizado">Perfil alterado com sucesso</string>
 
 
 </resources>
