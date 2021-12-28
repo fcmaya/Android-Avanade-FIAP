@@ -55,9 +55,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_feeds -> {
                     FeedsFragment()
                 }
-                R.id.navigation_favorites -> {
-                    FavoritesFragment()
-                }
                 else -> {
                     ProfileFragment()
                 }
