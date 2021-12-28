@@ -24,7 +24,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/txtSaudacao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -36,7 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txt2"
+                android:id="@+id/txtNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -45,10 +45,10 @@
                 android:textColor="#666"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/textView" />
+                app:layout_constraintTop_toTopOf="@id/txtSaudacao" />
 
             <TextView
-                android:id="@+id/txt3"
+                android:id="@+id/txtFavoritos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -60,7 +60,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
             <TextView
-                android:id="@+id/txt4"
+                android:id="@+id/txtSugestoes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -80,7 +80,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt4" />
+                app:layout_constraintTop_toBottomOf="@+id/txtSugestoes" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
@@ -95,7 +95,7 @@
                 android:background="@drawable/style_edit_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt2" />
+                app:layout_constraintTop_toBottomOf="@+id/txtNome" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
@@ -106,7 +106,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt3" />
+                app:layout_constraintTop_toBottomOf="@+id/txtFavoritos" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
