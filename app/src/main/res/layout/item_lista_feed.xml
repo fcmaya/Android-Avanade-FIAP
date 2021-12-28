@@ -1,193 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:clipToPadding="false"
     android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.Barrier
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top" />
+<!--<androidx.constraintlayout.widget.Barrier-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--app:barrierDirection="top" />-->
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView5"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@android:color/white"
+        android:elevation="10dp"
+        android:outlineProvider="bounds"
+        app:cardCornerRadius="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardView5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tv_nome_estado_feed2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="São Paulo, Brazil"
-                android:textColor="#666"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_nome_cidade_feed3"
-                app:layout_constraintVertical_bias="0.0" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_nome_cidade_feed3"
-                android:layout_width="275dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="4dp"
-                android:text="Ubatuba"
-                android:textColor="#0091EA"
-                android:textSize="34sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/tv_nome_estado_feed2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.117"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tv_nome_estado_feed2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="São Paulo, Brazil"
+                    android:textColor="#666"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_nome_cidade_feed3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_nome_cidade_feed3" />
+
+                <TextView
+                    android:id="@+id/tv_nome_cidade_feed3"
+                    android:layout_width="0dp"
+                    android:layout_height="41dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Ubatuba"
+                    android:textColor="#0091EA"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_nome_estado_feed2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="409dp"
-        android:layout_height="370dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView5">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView3"
-                android:layout_width="407dp"
-                android:layout_height="50dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="80dp"
+                android:paddingBottom="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:id="@+id/cardView3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView2"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardCornerRadius="20dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/iv_foto_user"
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/iv_foto_user"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/modelo_pessoa" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/tv_nome_user_post"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/modelo_pessoa" />
-                    </androidx.cardview.widget.CardView>
+                            android:layout_marginStart="12dp"
+                            android:text="Maria da Silva Lima"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/cardView2"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/tv_nome_user_post"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:text="Maria da Silva Lima"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/cardView2"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <ImageView
+                            android:id="@+id/iv_favorito"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_favorite_24" />
 
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView4"
-                android:layout_width="380dp"
-                android:layout_height="150dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
-                app:cardCornerRadius="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView3">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView4"
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
-                <ImageView
-                    android:id="@+id/iv_foto_praia"
+                    <ImageView
+                        android:id="@+id/iv_foto_praia"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/praia" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_legenda_foto_feed"
                     android:layout_width="wrap_content"
-                    android:layout_height="170dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/praia" />
-            </androidx.cardview.widget.CardView>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Praia, montanha e areia branquinha"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/cardView4"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
-            <TextView
-                android:id="@+id/tv_legenda_foto_feed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Praia, montanha e areia branquinha"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+                <TextView
+                    android:id="@+id/tv_desc_foto_feed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    android:textAlignment="inherit"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_favorito"
+                    app:layout_constraintEnd_toEndOf="@+id/cardView4"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/cardView4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_legenda_foto_feed" />
 
-            <TextView
-                android:id="@+id/tv_desc_foto_feed"
-                android:layout_width="380dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="5dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                android:textAlignment="inherit"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toTopOf="@+id/iv_favorito"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_legenda_foto_feed" />
-
-            <ImageView
-                android:id="@+id/iv_favorito"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/tv_data_post_feed"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_desc_foto_feed"
-                app:srcCompat="@drawable/ic_baseline_favorite_24" />
-
-            <TextView
-                android:id="@+id/tv_data_post_feed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="21/12/2021"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_favorito" />
+                <TextView
+                    android:id="@+id/tv_data_post_feed"
+                    android:layout_width="72dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="8dp"
+                    android:text="21/12/2021"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_desc_foto_feed"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_desc_foto_feed" />
 
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -11,11 +11,6 @@ import br.com.equipequatro.traveltips.databinding.ActivityNewPostBinding
 import br.com.equipequatro.traveltips.model.NewPostItem
 import br.com.equipequatro.traveltips.repository.NewPostRepository
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.type.DateTime
-import java.sql.Timestamp
-import java.time.LocalDateTime
-
 
 class NewPostActivity : AppCompatActivity() {
 
@@ -120,6 +115,5 @@ class NewPostActivity : AppCompatActivity() {
 
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-
     }
 }
