@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="32dp"
+    android:padding="10dp"
     tools:context=".view.fragment.ProfileFragment">
 
     <ScrollView
@@ -18,131 +17,104 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_editar_perfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Perfil"
-        android:textAlignment="textStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/purple_500"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/tv_editar_perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="60dp"
-        app:cardCornerRadius="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/purple_500"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
 
-        <ImageView
-            android:id="@+id/iv_editar_foto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="0dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/user"></ImageView>
-    </androidx.cardview.widget.CardView>
 
-    <ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="-20dp"
-        android:background="@drawable/btn_round"
-        android:elevation="2dp"
-        android:src="@drawable/ic_takepic"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Nome"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:textColor="@color/purple_700"
-        app:layout_constraintStart_toStartOf="@+id/tv_editar_perfil"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="60dp"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/et_editar_nome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="#1976D2"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/purple_700"
-        app:layout_constraintStart_toStartOf="@+id/tv_editar_perfil"
-        app:layout_constraintTop_toBottomOf="@+id/et_editar_nome"/>
+                <ImageView
+                    android:id="@+id/iv_editar_foto"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:elevation="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user"></ImageView>
 
-    <EditText
-        android:id="@+id/et_editar_email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#1976D2"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/et_editar_nome"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/et_editar_nome"
-        app:layout_constraintTop_toBottomOf="@+id/et_editar_nome" />
+            </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/btn_editar_atualizar"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/purple_700"
-        android:text="Salvar"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/et_editar_email"
-        app:layout_constraintStart_toStartOf="@+id/et_editar_email"
-        app:layout_constraintTop_toBottomOf="@+id/et_editar_email" />
+            <ImageButton
+                android:id="@+id/btn_selecionar_foto_perfil"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/btn_round"
+                android:elevation="2dp"
+                android:src="@drawable/ic_takepic"
+                app:layout_constraintEnd_toEndOf="@+id/cardView"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+            <EditText
+                android:id="@+id/et_editar_nome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/style_edit_text"
+                android:ems="10"
+                android:hint="Nome"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+            <EditText
+                android:id="@+id/et_editar_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/style_edit_text"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="@+id/et_editar_nome"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/et_editar_nome"
+                app:layout_constraintTop_toBottomOf="@+id/et_editar_nome" />
+
+            <Button
+                android:id="@+id/btn_editar_atualizar"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/btn_round"
+                android:text="Salvar"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_editar_email" />
 
             <Button
                 android:id="@+id/btn_editar_redefinir"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:backgroundTint="@color/purple_700"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/btn_round"
                 android:text="Redefinir Senha"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="@+id/btn_editar_atualizar"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/btn_editar_atualizar"
                 app:layout_constraintTop_toBottomOf="@+id/btn_editar_atualizar" />
-
-            <Button
-                android:id="@+id/btn_excluir_conta"
-                android:layout_width="150dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="40dp"
-                android:backgroundTint="@color/white"
-                android:text="Excluir conta"
-                android:textColor="@color/purple_700"
-                app:layout_constraintEnd_toEndOf="@+id/btn_editar_redefinir"
-                app:layout_constraintHorizontal_bias="0.986"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_editar_redefinir" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
