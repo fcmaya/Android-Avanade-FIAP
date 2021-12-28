@@ -2,22 +2,29 @@ package br.com.equipequatro.traveltips.view.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import br.com.equipequatro.traveltips.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import br.com.equipequatro.traveltips.R
-import br.com.equipequatro.traveltips.view.fragment.FavoritesFragment
 import br.com.equipequatro.traveltips.view.fragment.FeedsFragment
 import br.com.equipequatro.traveltips.view.fragment.HomeFragment
 import br.com.equipequatro.traveltips.view.fragment.ProfileFragment
+import com.bumptech.glide.Glide
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
 
@@ -72,6 +79,8 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.frameLayoutFragment, HomeFragment())
             .commit()
 
+        buscaUsuarioLogado()
+
         navViewDrawer.setNavigationItemSelectedListener {
 
             Toast.makeText(this, getString(it.itemId), Toast.LENGTH_SHORT)
@@ -84,10 +93,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_menu_about -> {
                     val intent = Intent(this, AboutActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_menu_setting -> {
-                    val intent = Intent(this, SettingActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_menu_exit -> {
@@ -103,6 +108,63 @@ class MainActivity : AppCompatActivity() {
         binding.btnNewPost.setOnClickListener {
             val intent = Intent(this, NewPostActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    private fun buscaUsuarioLogado() {
+        var navigationView =
+            binding.navViewDrawer.findViewById<NavigationView>(R.id.nav_view_drawer)
+        var headerView =
+            LayoutInflater.from(this).inflate(R.layout.header_menu_layout, navigationView, false)
+        navigationView.addHeaderView(headerView)
+        navigationView.removeHeaderView(navigationView.getHeaderView(0))
+        var user_logado = headerView.findViewById<TextView>(R.id.tv_nome_user_logado)
+        var foto_user_logado = headerView.findViewById<ImageView>(R.id.iv_foto_user_logado)
+        var email_user_logado = headerView.findViewById<TextView>(R.id.tv_email_user_logado)
+
+        if (FirebaseAuth.getInstance().currentUser?.displayName != "") {
+            user_logado.setText(FirebaseAuth.getInstance().currentUser?.displayName)
+            email_user_logado.setText(FirebaseAuth.getInstance().currentUser?.email)
+            Glide.with(this)
+                .load(FirebaseAuth.getInstance().currentUser?.photoUrl)
+                .into(foto_user_logado)
+        } else {
+            FirebaseFirestore.getInstance().collection("usuario")
+                .whereEqualTo("uuid", FirebaseAuth.getInstance().currentUser?.uid)
+                .get()
+                .addOnSuccessListener(OnSuccessListener {
+                    for (user in it.documents) {
+                        if (user.data?.get("nome") != null) {
+                            user_logado.setText(user.data?.get("nome").toString())
+                        }
+
+                        if (user.data?.get("email") != null) {
+                            email_user_logado.setText(user.data?.get("email").toString())
+                        } else {
+                            if (FirebaseAuth.getInstance().currentUser?.email != "") {
+                                email_user_logado.setText(FirebaseAuth.getInstance().currentUser?.email)
+                            }
+                        }
+
+
+
+                        if (user.data?.get("fotoPerfilUrl") != null) {
+                            Glide.with(this)
+                                .load(user.data?.get("fotoPerfilUrl").toString())
+                                .into(foto_user_logado)
+                        } else {
+                            if (FirebaseAuth.getInstance().currentUser?.photoUrl != null) {
+                                Glide.with(this)
+                                    .load(FirebaseAuth.getInstance().currentUser?.photoUrl)
+                                    .into(foto_user_logado)
+                            }
+                        }
+
+
+
+                    }
+                })
+
         }
     }
 

@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LinearLayoutUser"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:orientation="vertical"
-    android:background="@drawable/bgmain"
+    android:background="@drawable/landscape"
     android:gravity="bottom"
+    android:orientation="vertical"
     android:padding="20dp">
 
-    <ImageView
+    <androidx.cardview.widget.CardView
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@mipmap/ic_launcher" />
+        app:cardCornerRadius="37dp">
+
+        <ImageView
+            android:id="@+id/iv_foto_user_logado"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:alpha="1"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
+        android:id="@+id/tv_nome_user_logado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Leonardo Ott"
-        android:textSize="24sp" />
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:shadowColor="#FFFFFF"
+        android:shadowDy="2"
+        android:shadowDx="2"
+        android:shadowRadius="2"/>
 
     <TextView
+        android:id="@+id/tv_email_user_logado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="l.ott.da.costa@avanade.com" />
+        android:text="l.ott.da.costa@avanade.com"
+        android:textColor="@color/black"
+        android:shadowColor="#FFFFFF"
+        android:shadowDy="2"
+        android:shadowDx="2"
+        android:shadowRadius="2"/>
 
 </LinearLayout>
