@@ -38,9 +38,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/iv_editar_foto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:elevation="0dp"
             android:scaleType="centerCrop"
             android:src="@drawable/user"></ImageView>
@@ -117,7 +119,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_editar_email" />
 
             <Button
-                android:id="@+id/btn_editar_delete"
+                android:id="@+id/btn_editar_redefinir"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
@@ -137,10 +139,10 @@
                 android:backgroundTint="@color/white"
                 android:text="Excluir conta"
                 android:textColor="@color/purple_700"
-                app:layout_constraintEnd_toEndOf="@+id/btn_editar_delete"
+                app:layout_constraintEnd_toEndOf="@+id/btn_editar_redefinir"
                 app:layout_constraintHorizontal_bias="0.986"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_editar_delete" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_editar_redefinir" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
