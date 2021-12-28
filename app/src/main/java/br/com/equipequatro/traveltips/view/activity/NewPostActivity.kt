@@ -1,9 +1,16 @@
 package br.com.equipequatro.traveltips.view.activity
 
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import br.com.equipequatro.traveltips.R
 import br.com.equipequatro.traveltips.databinding.ActivityNewPostBinding
+import br.com.equipequatro.traveltips.model.NewPostItem
+import br.com.equipequatro.traveltips.repository.NewPostRepository
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.type.DateTime
 import java.sql.Timestamp
@@ -13,6 +20,7 @@ import java.time.LocalDateTime
 class NewPostActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityNewPostBinding
+    private var fotoPost: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,26 +31,95 @@ class NewPostActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.btnSalvar.setOnClickListener {
-            salvarPostagem()
+            if (validar()){
+                salvarPostagem()
+            }
         }
 
+        binding.btnEscolherFotoPost.setOnClickListener {
+            abrirGaleria()
+        }
     }
 
-    fun salvarPostagem(){
+    private fun abrirGaleria() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "image/*"
+        startActivityForResult(Intent.createChooser(intent, "Escolha uma foto"), 5000)
+    }
 
-        val data1 = hashMapOf(
-            "cidade" to "Manaus",
-            "dataPostagem" to com.google.firebase.Timestamp.now(),
-            "descricao" to "Um bom lugar para se estar depois de uma semana cansativa",
-            "estado" to "Amazonas",
-            "fotoUrl" to "https://firebasestorage.googleapis.com/v0/b/avanade-fiap-maia.appspot.com/o/praia.jpg?alt=media&token=9f1b49a2-f81a-4d58-897b-77d63a726b3a",
-            "titulo" to "Teste Manaus",
-            "usuarioCriadorUuid" to "QwF5R970indgTy1lOUbFclaET0d2"
+    override fun onActivityResult(requestCode: Int, resultCode: Int, imagem: Intent?) {
+        super.onActivityResult(requestCode, resultCode, imagem)
+
+        if (requestCode == 5000 && resultCode == RESULT_OK) {
+            val fluxoImagem = contentResolver.openInputStream(imagem!!.data!!)
+            fotoPost = BitmapFactory.decodeStream(fluxoImagem)
+            binding.imgFotoPost.setImageBitmap(fotoPost)
+        }
+    }
+
+    fun validar(): Boolean {
+        var bit_return: Boolean = true
+
+        if (fotoPost == null) {
+
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Ops!")
+            builder.setMessage("A foto é obrigatória!!")
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
+
+            bit_return = false
+        }
+
+        if (binding.txtCidade.text.isEmpty()) {
+            binding.txtCidade.error = getString(R.string.error_email_obrigatorio)
+            bit_return = false
+        }
+
+        if (binding.txtEstado.text.isEmpty()) {
+            binding.txtEstado.error = getString(R.string.error_senha_obrigatoria)
+            bit_return = false
+        }
+
+        if (binding.txtTituloPostagem.text.isEmpty()) {
+            binding.txtTituloPostagem.error = getString(R.string.error_senha_obrigatoria)
+            bit_return = false
+        }
+
+        if (binding.txtDescricaoPostagem.text.isEmpty()) {
+            binding.txtDescricaoPostagem.error = getString(R.string.error_senha_obrigatoria)
+            bit_return = false
+        }
+
+        return bit_return
+    }
+
+    fun salvarPostagem() {
+
+        var newPost = NewPostItem (
+            cidade = binding.txtCidade.text.toString(),
+            dataPostagem = com.google.firebase.Timestamp.now(),
+            estado = binding.txtEstado.text.toString(),
+            titulo = binding.txtTituloPostagem.text.toString(),
+            descricao = binding.txtDescricaoPostagem.text.toString(),
+            usuarioCriadorUuid = FirebaseAuth.getInstance().uid.toString()
         )
 
-        var db = FirebaseFirestore.getInstance()
+        val repository = NewPostRepository()
+        repository.saveNewPost(
+            newPost,
+            fotoPost!!,
+            this
+        )
 
-        db.collection("postagem").document().set(data1)
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Sucesso")
+        builder.setMessage("Sua postagem foi incluída com sucesso!")
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
 
     }
 }

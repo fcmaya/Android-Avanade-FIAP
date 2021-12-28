@@ -33,6 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/imgFotoPost"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:scaleType="centerCrop"
@@ -41,6 +42,7 @@
             </androidx.cardview.widget.CardView>
 
             <ImageButton
+                android:id="@+id/btnEscolherFotoPost"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="-20dp"
