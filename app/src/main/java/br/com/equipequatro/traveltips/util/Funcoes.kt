@@ -9,12 +9,10 @@ fun getGreetingMessage(context: Context):String{
     val timeOfDay = c.get(Calendar.HOUR_OF_DAY)
 
     return when (timeOfDay) {
-        in 0..11 -> context.getString(R.string.saudacao_bom_dia)
-        in 12..15 -> context.getString(R.string.saudacao_boa_tarde)
-        in 16..20 -> context.getString(R.string.saudacao_boa_noite)
-        in 21..23 -> context.getString(R.string.saudacao_boa_noite)
+        in 6..12 -> context.getString(R.string.saudacao_bom_dia)
+        in 13..18 -> context.getString(R.string.saudacao_boa_tarde)
         else -> {
-            context.getString(R.string.saudacao_ola)
+            context.getString(R.string.saudacao_boa_noite)
         }
     }
 }

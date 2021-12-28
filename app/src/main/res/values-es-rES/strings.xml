@@ -54,6 +54,7 @@
     <string name="saudacao_boa_tarde">¡Buenas tardes!</string>
     <string name="saudacao_boa_noite">¡Buenas tardes!</string>
     <string name="saudacao_ola">¡Hola!</string>
+    <string name="error_nome_obrigatorio">¡El nombre es obligatorio!</string>
 
 
 </resources>
