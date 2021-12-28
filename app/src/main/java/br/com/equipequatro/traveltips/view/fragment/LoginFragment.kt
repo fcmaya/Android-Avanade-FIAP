@@ -143,6 +143,7 @@ class LoginFragment : Fragment() {
                     }
                     SharedPreferencesRepository.savePreferences(context, "email", user?.email.toString())
                     SharedPreferencesRepository.savePreferences(context, "photoUrl", user?.photoUrl.toString().replace("\\", ""))
+                    SharedPreferencesRepository.savePreferences(context, "uid", user?.uid.toString())
 
                     updateUI(user)
                 }
@@ -218,6 +219,7 @@ class LoginFragment : Fragment() {
                         SharedPreferencesRepository.savePreferences(context, "displayName", user?.displayName.toString())
                         SharedPreferencesRepository.savePreferences(context, "email", user?.email.toString())
                         SharedPreferencesRepository.savePreferences(context, "photoUrl", user?.photoUrl.toString().replace("\\", ""))
+                        SharedPreferencesRepository.savePreferences(context, "uid", user?.uid.toString())
 
                         updateUI(user)
                     } else {
