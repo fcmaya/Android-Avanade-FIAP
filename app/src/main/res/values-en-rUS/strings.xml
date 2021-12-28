@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TravelTips</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Tips</string>
+    <string name="title_notifications">Favorites</string>
+    <string name="title_new_tips">New Tip</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="forgot_passord">Forgot Password</string>
+    <string name="set_your_email">An email will be sent to you to refedin your password</string>
+    <string name="recuperar_sua_senha">Recover your password</string>
+    <string name="hint_seu_e_mail">Your email</string>
+    <string name="hint_login">E-mail</string>
+    <string name="hint_senha">Password</string>
+    <string name="login">Login</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="msg_campos_obrigatorios">Please fill in the required fields</string>
+    <string name="error_email_obrigatorio">Email is mandatory!</string>
+    <string name="tab_login">Login</string>
+    <string name="tab_registrar">Register</string>
+    <string name="usuario_nao_cadastrado">User not registered!</string>
+    <string name="error_generico">An error has occurred! Please try again</string>
+    <string name="error_senha_obrigatoria">Password is required!</string>
+    <string name="default_android_client_id">372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com</string>
+    <string name="credenciais_invalidas">Invalid user and/or password</string>
+    <string name="facebook_app_id">452714633105636</string>
+    <string name="fb_login_protocol_scheme">fb452714633105636</string>
+    <string name="autenticacao_falhou">Authentication failed</string>
+    <string name="error_usuario_nao_cadastrado">User not registered in the database.</string>
+    <string name="recuperacao_senha">Password recovery initiated. Email sent.</string>
+    <string name="menu_perfil">Profile</string>
+    <string name="menu_sobre">About</string>
+    <string name="menu_exit">Exit</string>
+    <string name="menu_setting">Setting</string>
+
+    <string name="sobre_n_s">About Us</string>
+    <string name="logo_travel_tips">logo travel tips</string>
+    <string name="somos_um_grupo">We are a group of developers, passionate about technology and who are now venturing into the Android world and loving it!</string>
+    <string name="leonardo_ott"> Leonardo Ott Žn Full Stack Dev</string>
+    <string name="alexandre"> Alexandre Guimarães \n Back End Dev</string>
+    <string name="fernando"> Fernando Maia \n Back End Dev</string>
+
+    <string name="erro_senha_divergente">Password confirmation does not match.</string>
+    <string name="usuario_ja_cadastrado">User already registered!</string>
+    <string name="senha_fraca">Weak password. You need to create a password with at least 6 characters.</string>
+    <string name="usuario_cadastrado">Successfully registered user!</string>
+    <string name="saudacao_bom_dia">Good morning!</string>
+    <string name="saudacao_boa_tarde">Good afternoon!</string>
+    <string name="saudacao_boa_noite">Good evening!</string>
+    <string name="saudacao_ola">Hello!</string>
+
+
+</resources>
+

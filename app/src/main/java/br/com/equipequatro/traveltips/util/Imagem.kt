@@ -20,3 +20,12 @@ fun convertBase64ToBitmap(base64Image: String): Bitmap {
 
     return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
 }
+
+fun converterBitmapToByteArray(bitmap: Bitmap): ByteArray {
+
+    val bitmapArray = ByteArrayOutputStream()
+
+    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bitmapArray)
+
+    return bitmapArray.toByteArray()
+}
