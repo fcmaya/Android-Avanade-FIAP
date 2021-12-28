@@ -30,11 +30,9 @@ class NewPostActivity : AppCompatActivity() {
 
     fun salvarPostagem(){
 
-        val now = LocalDateTime.now()
-
         val data1 = hashMapOf(
             "cidade" to "Manaus",
-            "dataPostagem" to Timestamp.valueOf(now.toString()),
+            "dataPostagem" to com.google.firebase.Timestamp.now(),
             "descricao" to "Um bom lugar para se estar depois de uma semana cansativa",
             "estado" to "Amazonas",
             "fotoUrl" to "https://firebasestorage.googleapis.com/v0/b/avanade-fiap-maia.appspot.com/o/praia.jpg?alt=media&token=9f1b49a2-f81a-4d58-897b-77d63a726b3a",

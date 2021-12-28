@@ -16,6 +16,4 @@ class LoginViewModel: ViewModel() {
     fun mudarTab() {
         numeroTab.value = _numeroTab.value
     }
-
-
 }
