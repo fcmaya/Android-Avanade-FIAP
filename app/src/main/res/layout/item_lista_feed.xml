@@ -45,7 +45,7 @@
                 android:textColor="#0091EA"
                 android:textSize="34sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/tv_nome_estado_feed"
+                app:layout_constraintBottom_toTopOf="@+id/tv_nome_estado_feed2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.117"
                 app:layout_constraintStart_toStartOf="parent"
