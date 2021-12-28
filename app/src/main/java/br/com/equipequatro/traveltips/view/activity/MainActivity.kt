@@ -102,6 +102,11 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
+        binding.btnNewPost.setOnClickListener {
+            val intent = Intent(this, NewPostActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onBackPressed() {
