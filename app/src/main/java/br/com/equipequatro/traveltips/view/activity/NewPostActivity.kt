@@ -5,11 +5,13 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AlertDialog
 import br.com.equipequatro.traveltips.R
 import br.com.equipequatro.traveltips.databinding.ActivityNewPostBinding
 import br.com.equipequatro.traveltips.model.NewPostItem
 import br.com.equipequatro.traveltips.repository.NewPostRepository
+import br.com.equipequatro.traveltips.util.LoadingDialog
 import com.google.firebase.auth.FirebaseAuth
 
 class NewPostActivity : AppCompatActivity() {
@@ -107,13 +109,17 @@ class NewPostActivity : AppCompatActivity() {
             this
         )
 
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Sucesso")
-        builder.setMessage("Sua postagem foi incluída com sucesso!")
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
+        val loadingDialog = LoadingDialog(this)
 
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+        loadingDialog.openDialog()
+
+        val handler = Handler()
+        handler.postDelayed({
+
+            loadingDialog.closeDialog()
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }, 2000)
     }
 }
