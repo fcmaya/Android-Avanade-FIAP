@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Consejos_de_viaje</string>
+    <string name="title_activity_main2">Actividad principal2</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Consejos</string>
+    <string name="title_notifications">Favoritos</string>
+    <string name="title_new_tips">Nuevo consejo</string>
+    <!-- TODO: Eliminar o cambiar este texto del marcador de posición -->
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Botón ficticio</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="forgot_passord">Contraseña olvidada</string>
+    <string name="set_your_email">Se le enviará un correo electrónico para que vuelva a introducir su contraseña</string>
+    <string name="recuperar_sua_senha">Recupera tu contraseña</string>
+    <string name="hint_seu_e_mail">Tu correo electrónico</string>
+    <string name="hint_login">Correo electrónico</string>
+    <string name="hint_senha">Contraseña</string>
+    <string name="login">Inicio de sesión</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="msg_campos_obrigatorios">Por favor, rellene los campos obligatorios</string>
+    <string name="error_email_obrigatorio">¡El correo electrónico es obligatorio!</string>
+    <string name="tab_login">Inicio de sesión</string>
+    <string name="tab_registrar">Registrar</string>
+    <string name="usuario_nao_cadastrado">¡Usuario no registrado!</string>
+    <string name="error_generico">¡Ha ocurrido un error! Por favor, inténtelo de nuevo</string>
+    <string name="error_senha_obrigatoria">¡Se requiere contraseña!</string>
+    <string name="default_android_client_id">372188875571-3113oqpklva51a1rkrk2t3f8ao2fq3c4.apps.googleusercontent.com</string>
+    <string name="credenciais_invalidas">Usuario y/o contraseña inválidos</string>
+    <string name="facebook_app_id">452714633105636</string>
+    <string name="fb_login_protocol_scheme">fb452714633105636</string>
+    <string name="autenticacao_falhou">Fallo de autenticación</string>
+    <string name="error_usuario_nao_cadastrado">Usuario no registrado en la base de datos.</string>
+    <string name="recuperacao_senha">Recuperación de contraseña iniciada. Correo electrónico enviado.</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_sobre">Acerca de</string>
+    <string name="menu_exit">Salir</string>
+    <string name="menu_setting">Configuración</string>
+
+    <string name="sobre_n_s">Acerca de nosotros</string>
+    <string name="logo_travel_tips">logo consejos de viaje</string>
+    <string name="somos_um_grupo">Somos un grupo de desarrolladores, apasionados por la tecnología y que ahora nos aventuramos en el mundo Android y nos encanta!</string>
+    <string name="leonardo_ott"> Leonardo Ott Žn Full Stack Dev</string>
+    <string name="alexandre"> Alexandre Guimarães \Nn Back End Dev</string>
+    <string name="fernando"> Fernando Maia \Nen Back End Dev</string>
+
+    <string name="erro_senha_divergente">La confirmación de la contraseña no coincide.</string>
+    <string name="usuario_ja_cadastrado">¡El usuario ya está registrado!</string>
+    <string name="senha_fraca">Contraseña débil. Debe crear una contraseña con al menos 6 caracteres.</string>
+    <string name="usuario_cadastrado">¡Usuario registrado con éxito!</string>
+    <string name="saudacao_bom_dia">¡Buenos días!</string>
+    <string name="saudacao_boa_tarde">¡Buenas tardes!</string>
+    <string name="saudacao_boa_noite">¡Buenas tardes!</string>
+    <string name="saudacao_ola">¡Hola!</string>
+
+
+</resources>
+
