@@ -90,7 +90,6 @@ class HomeFragment : Fragment() {
                             .addOnSuccessListener(OnSuccessListener {
                                 fav.foto_fav = it.data?.get("fotoUrl").toString()
                                 fav.cidade_fav = it.data?.get("cidade").toString()
-                                Log.i("avanade", favoritos.toString())
                                 favListAdapter.updateLista(favoritos)
                             })
                     }
