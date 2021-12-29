@@ -37,6 +37,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 
 class ProfileFragment : Fragment() {
+
     private val storage = FirebaseStorage.getInstance().getReference("usuario")
     private val firestore = FirebaseFirestore.getInstance()
     private var _binding: FragmentProfileBinding? = null
@@ -140,20 +141,59 @@ class ProfileFragment : Fragment() {
 
     private fun carregarDados() {
 
-        nome = SharedPreferencesRepository.getPreferences(context, "displayName")!!
-        email = SharedPreferencesRepository.getPreferences(context, "email")!!
-        uid = SharedPreferencesRepository.getPreferences(context, "uid")!!
-        fotoUrl = SharedPreferencesRepository.getPreferences(context, "photoUrl")!!
+        FirebaseFirestore.getInstance().collection("usuario")
+            .whereEqualTo("uuid", FirebaseAuth.getInstance().currentUser?.uid)
+            .get()
+            .addOnSuccessListener(OnSuccessListener {
+                if (it != null) {
 
-        binding.etEditarNome.setText(nome)
-        binding.etEditarEmail.setText(email)
+                    for (user in it.documents) {
+                        if (user.data?.get("nome") != null) {
+                            binding.etEditarNome.setText(user.data?.get("nome").toString())
+                        }
 
-        if (fotoUrl != "") {
-           // Glide.with(this).load(fotoUrl).into(binding.ivEditarFoto)
+                        if (user.data?.get("email") != null) {
+                            binding.etEditarEmail.setText(user.data?.get("email").toString())
+                        } else {
+                            if (FirebaseAuth.getInstance().currentUser?.email != "") {
+                                binding.etEditarEmail.setText(FirebaseAuth.getInstance().currentUser?.email)
+                            }
+                        }
 
-            //var bitmap = Glide.with(this).asBitmap().load(fotoUrl) //.into(binding.ivEditarFoto);
-            //binding.root.findViewById<ImageView>(R.id.iv_editar_foto)?.setImageBitmap(bitmap)
-        }
+                        if (user.data?.get("fotoPerfilUrl") != null) {
+                            Glide.with(this)
+                                .load(user.data?.get("fotoPerfilUrl").toString())
+                                .into(binding.ivEditarFoto)
+                        } else {
+                            if (FirebaseAuth.getInstance().currentUser?.photoUrl != null) {
+                                Glide.with(this)
+                                    .load(FirebaseAuth.getInstance().currentUser?.photoUrl)
+                                    .into(binding.ivEditarFoto)
+                            }
+                        }
+                    }
+                } else {
+
+                    nome = SharedPreferencesRepository.getPreferences(context, "displayName")!!
+                    email = SharedPreferencesRepository.getPreferences(context, "email")!!
+                    uid = SharedPreferencesRepository.getPreferences(context, "uid")!!
+                    fotoUrl = SharedPreferencesRepository.getPreferences(context, "photoUrl")!!
+
+                    binding.etEditarNome.setText(nome)
+                    binding.etEditarEmail.setText(email)
+
+                    if (fotoUrl != "") {
+                        // Glide.with(this).load(fotoUrl).into(binding.ivEditarFoto)
+
+                        //var bitmap = Glide.with(this).asBitmap().load(fotoUrl) //.into(binding.ivEditarFoto);
+                        //binding.root.findViewById<ImageView>(R.id.iv_editar_foto)?.setImageBitmap(bitmap)
+                    }
+
+                }
+
+            })
+
+
     }
 
     fun validar(): Boolean {

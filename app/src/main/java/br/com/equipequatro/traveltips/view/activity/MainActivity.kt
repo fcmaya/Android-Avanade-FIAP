@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar!!)
 
-        toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0)//
+        toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -122,50 +122,40 @@ class MainActivity : AppCompatActivity() {
         var foto_user_logado = headerView.findViewById<ImageView>(R.id.iv_foto_user_logado)
         var email_user_logado = headerView.findViewById<TextView>(R.id.tv_email_user_logado)
 
-        if (FirebaseAuth.getInstance().currentUser?.displayName != "") {
-            user_logado.setText(FirebaseAuth.getInstance().currentUser?.displayName)
-            email_user_logado.setText(FirebaseAuth.getInstance().currentUser?.email)
-            Glide.with(this)
-                .load(FirebaseAuth.getInstance().currentUser?.photoUrl)
-                .into(foto_user_logado)
-        } else {
-            FirebaseFirestore.getInstance().collection("usuario")
-                .whereEqualTo("uuid", FirebaseAuth.getInstance().currentUser?.uid)
-                .get()
-                .addOnSuccessListener(OnSuccessListener {
-                    for (user in it.documents) {
-                        if (user.data?.get("nome") != null) {
-                            user_logado.setText(user.data?.get("nome").toString())
-                        }
-
-                        if (user.data?.get("email") != null) {
-                            email_user_logado.setText(user.data?.get("email").toString())
-                        } else {
-                            if (FirebaseAuth.getInstance().currentUser?.email != "") {
-                                email_user_logado.setText(FirebaseAuth.getInstance().currentUser?.email)
-                            }
-                        }
-
-
-
-                        if (user.data?.get("fotoPerfilUrl") != null) {
-                            Glide.with(this)
-                                .load(user.data?.get("fotoPerfilUrl").toString())
-                                .into(foto_user_logado)
-                        } else {
-                            if (FirebaseAuth.getInstance().currentUser?.photoUrl != null) {
-                                Glide.with(this)
-                                    .load(FirebaseAuth.getInstance().currentUser?.photoUrl)
-                                    .into(foto_user_logado)
-                            }
-                        }
-
-
-
+        FirebaseFirestore.getInstance().collection("usuario")
+            .whereEqualTo("uuid", FirebaseAuth.getInstance().currentUser?.uid)
+            .get()
+            .addOnSuccessListener(OnSuccessListener {
+                for (user in it.documents) {
+                    if (user.data?.get("nome") != null) {
+                        user_logado.setText(user.data?.get("nome").toString())
                     }
-                })
 
-        }
+                    if (user.data?.get("email") != null) {
+                        email_user_logado.setText(user.data?.get("email").toString())
+                    } else {
+                        if (FirebaseAuth.getInstance().currentUser?.email != "") {
+                            email_user_logado.setText(FirebaseAuth.getInstance().currentUser?.email)
+                        }
+                    }
+
+                    if (user.data?.get("fotoPerfilUrl") != null) {
+                        Glide.with(this)
+                            .load(user.data?.get("fotoPerfilUrl").toString())
+                            .into(foto_user_logado)
+                    } else {
+                        if (FirebaseAuth.getInstance().currentUser?.photoUrl != null) {
+                            Glide.with(this)
+                                .load(FirebaseAuth.getInstance().currentUser?.photoUrl)
+                                .into(foto_user_logado)
+                        }
+                    }
+
+
+                }
+            })
+
+
     }
 
     override fun onBackPressed() {
