@@ -5,17 +5,15 @@ Utilizando as tecnologias Kotlin e Firebase foi desenvolvido para o projeto Acad
 ## Características
 - Cadastro simplificado do usuário através de e-mail e senha 
 - Possibilidade de login através de outras mídias sociais
-- Postagem de viagens com textos e fotos (câmera ou dispositivos)
+- Postagem de viagens com textos e fotos
 - Pesquisas das postagens por palavra específica
 - Comentar e curtir as postagens da rede
  
 ## Contribuidores
-- Alexandre Guimalhães
 - Fernando Claudiano Maia
 - Jefferson Paraizo Magalhães
 - Leonardo Marcião Ott da Costa
 - Priscila da Silva Gagliardi
-- Renato Mello
 
 ## Instrutor
 - Celso Marcos Furtado
