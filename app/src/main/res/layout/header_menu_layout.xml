@@ -27,23 +27,21 @@
         android:id="@+id/tv_nome_user_logado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Leonardo Ott"
-        android:textColor="@color/black"
-        android:textSize="24sp"
         android:shadowColor="#FFFFFF"
-        android:shadowDy="2"
         android:shadowDx="2"
-        android:shadowRadius="2"/>
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_email_user_logado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="l.ott.da.costa@avanade.com"
-        android:textColor="@color/black"
         android:shadowColor="#FFFFFF"
-        android:shadowDy="2"
         android:shadowDx="2"
-        android:shadowRadius="2"/>
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:textColor="@color/black" />
 
 </LinearLayout>
